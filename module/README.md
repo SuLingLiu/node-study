@@ -19,6 +19,7 @@
 - cwd()：返回当前进程的工作目录
 - chdir(directory)：改变当前进程的工作目录
 - memoryUsage()：返回node进程的内存使用情况，单位是byte
-- exit(code)：退出
-- kill(pid)：向进程发送信息
-- ==很重要的属性：stdin、stdout：标准输入输出流(IO)，stdin和stdout提供了操作输入数据和输出数据的方法，我们也通常称为IO操作，输入设备如：鼠标、键盘等，输出如：打印机等==
+- [x] - exit(code)：退出
+- [ ] > - kill(pid)：向进程发送信息
+> - **~~*很重要的属性*~~**：stdin、stdout：标准输入输出流(IO)，stdin和stdout提供了操作输入数据和输出数据的方法，我们也通常称为IO操作，输入设备如：鼠标、键盘等，输出如：打印机等
+-     
