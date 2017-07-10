@@ -1,0 +1,12 @@
+## Buffer类
+- buf.length：buffer的字节大小
+- buf[index]：获取或者设置在指定index索引位置的8位字节内容
+- buf.write(string,[offset],[length],[encoding])；根据参数offset偏移量和指定的encoding编码方式，将参数string数据写入buffer
+- buf.string([encoding],[start],[end])：根据 encoding参数（默认是"utf8"）返回一个解码的string类型
+- buf.toJSON()：返回一个JSON表示的Buffer实例，JSON.stringify将会默认调用来字符串序列化这个Buffer实例
+- buf.slice([start],[end])：返回一个新的buffer,这个buffer将会和老的buffer引用相同的内存地址，注意，修改这个新的buffer实例slice片段，也会改变原来的buffer
+- buf.cope(targetBuffer,[targetStart],[sourceStart],[sourceEnd])：进行buffer的拷贝
+- Buffer.isEncoding(encoding)：如果给定的编码enconding是有效的，返回true，否则返回false
+- Buffer.isBuffer(obj)：测试这个obj是否是一个Buffer
+- Buffer.byteLength(string,[encodeing])：将会返回字符串真实的字节长度，编码默认是utf8
+- Buffer.concat(list,[totalLength])：返回一个保存着将传入buffer数组中所有buffer对象拼接在一起的buffer对象
