@@ -1,0 +1,37 @@
+## Fele System -文件系统模块 -require('fs')
+- 该模块是核心模块，需要使用require导入后使用
+- 该模块提供了操作文件的一些API
+- fs.open(path,flags,[mode],callback)：异步版的打开一个文件
+- fs.openSync(path,flags,[mode])：fs.open()的同步版
+- fs.read(fd,buffer,offset,length,position,callback)：从指定的文档标识符fd读取文件数据
+-  fs.readSync(fd,buffer,offset,length,position)：fs.read的同步版本，返回bytesRead的个数
+- fs.write(fd,buffer,offset,length[,position],callback)：通过文件标识fd，向指定的文件写入buffer
+- fs.write(fd,data[,position[,encoding]],callback)：把data写入到文档中通过指定的fd，如果data不是buffer对象的实例则会把值强制转化成一个字符串
+- fs.writeSync(fd,buffer,offer,length[,position])：fs.write()的同步版本
+- fs.writeSync(fd,data[,position[,encoding]])：fs.write()的同步版
+- fs.close(fd,callback)：关闭一个打开的文件
+- fs.closeSync(fd)：fs.close()的同步版本
+
+- **常用的操作，以上的是操作底层的一些方法**
+- fs.writeFile(filename,data,[options],callback)：异步的将数据写入一个文件，如果文件不存在则新建，如果文件原先存在，则会替换，data可以是一个string,也可以是一个原生的buffer
+- fs.writeFileSync(filename,data,[options])：fs.wirteFile的同步版本，注意：没有callback，也不需要
+- fs.appendFile(filename,data,[options],callback)：异步的将数据添加到一个文件的尾部，如果文件不存在，会创建一个新的文件，data可以是一个string,也可以是一个原生的buffer
+- fs.appendFileSync(filename,data,[options])：fs.appendFile的同步版本
+- fs.readFile(filename,[options],callback)：异步读取一个文件的全部内容
+- fs.readFileSync(filename,[options])：fs.readFile的同步版本
+- fs.exists(path,callback)：检查指定路径的文件或者目录是否存在
+- fs.existsSync(path)：fs.exists的同步版本
+- fs.unlink(path,callback)：删除一个文件
+- fs.unlinkSync(path)：fs.unlink()的同步版本
+- fs.rename(oldPath,newPath,callback)：重命名
+- fs.renameSync(oldPath,newPath)：fs.rename()的同步版本
+- fs.stat(path,callback)：读取文件信息
+- fs.statSync(path,callback)：fs.stat()的同步版本
+- fs.watch(fliename,[options),[listener])：观察指定路径的改变，filename路径可以是文件或者目录
+- fs.mkdir(path,[mode],callback)：创建文件夹
+- fs.mkdirSync(path,[mode])：fs.mkdir()的同步版本
+- fs.readdir(path,callback)：读取文件夹
+- fs.readdirSync(path)：fs.readdir()同步版本
+- fs.rmdir(path,callback)：删除文件夹
+- fs.rmdirSync(path)：fs.rmdir()的同步版本
+
