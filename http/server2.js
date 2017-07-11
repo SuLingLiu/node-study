@@ -37,7 +37,7 @@ server.on('request', function (req, res) {
             res.writeHead(404, {
                 'content-type': 'text/html;charset=utf-8'
             });
-            res.end('<h1>页面被LEO吃掉了</h1>');
+            res.end('<h1>404</h1>');
             break;
     }
 
