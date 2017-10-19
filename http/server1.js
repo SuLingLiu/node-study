@@ -33,7 +33,7 @@ server.on('request', function (req, res) {
 
     res.write('<h1>hello</h1>');
 
-    res.end();
+    res.end();//write的内容可以写在end里，作用是一样的，但是end方法只能有一个
 
 })
 
