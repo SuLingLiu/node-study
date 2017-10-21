@@ -44,12 +44,14 @@ fs.exists(filename, function (isExists) {
     }
 });
 */
-
+fs.exists('../buffer', function (isExists) {
+    console.log(isExists);//true
+})
 //同步版本
-if (!fs.existsSync(filename)) {
+/*if (!fs.existsSync(filename)) {
     fs.writeFileSync(filename, 'hello');
     console.log('新文件创建成功');
 } else {
     fs.appendFileSync(filename, ' 学习node')
     console.log('新内容追加成功')
-}
+}*/

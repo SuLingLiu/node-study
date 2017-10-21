@@ -1,6 +1,6 @@
 var fs = require('fs');
-var filename = '3.txt';
-/*
+var filename = '3.new.txt';
+
 //读文件
 fs.readFile(filename, function (err, data) {
     if (err) {
@@ -11,7 +11,7 @@ fs.readFile(filename, function (err, data) {
     }
 
 });
-*/
+
 
 /*
 //删除文件
@@ -33,6 +33,15 @@ fs.rename(filename, '3.new.txt', function () {
 
 
 //相当于右键文件的属性里的信心
-fs.stat('3.new.txt', function () {
+/*fs.stat('3.new.txt', function () {
     console.log(arguments);
-})
+})*/
+
+/*fs.stat('../buffer', function () {
+    console.log(arguments[1].isDirectory());
+})*/
+
+//只能删除空文件夹
+/*fs.rmdir('./111', function (err, data) {
+    console.log(err)
+})*/

@@ -3,21 +3,25 @@ var fs = require('fs');
  * fs.mkdir(path, [mode], callback)
  * */
 
-/*
-fs.mkdir('./1', function () {
+//创建一个空文件夹
+/*fs.mkdir('./1', function () {
 
     console.log(arguments);
-});
-*/
-/*
-fs.rmdir('./1', function () {
+});*/
+
+//删除一个空文件夹
+/*fs.rmdir('./1', function () {
     console.log(arguments);
+})*/
+
+//获取文件或文件夹的绝对路径 D:\liusuling\node\node-study\file\7.js
+fs.realpath('./7.js', function (err, data) {
+    console.log(data);
 })
-*/
 
-fs.readdir('../file', function (err, fileList) {
+/*fs.readdir('../file', function (err, fileList) {
 
-    console.log(fileList); //当前文件夹下的所有文件
+    console.log(fileList); //../file文件夹下的所有文件名
 
     fileList.forEach(function (f) {
 
@@ -41,4 +45,4 @@ fs.readdir('../file', function (err, fileList) {
 
     });
 
-})
+})*/
