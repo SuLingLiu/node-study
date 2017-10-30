@@ -1,8 +1,9 @@
 var fs = require('fs');
+var path = require('path');
 var filename = '3.new.txt';
 
 //读文件
-fs.readFile(filename, function (err, data) {
+/*fs.readFile(filename, function (err, data) {
     if (err) {
         console.log('文件读取失败');
     } else {
@@ -11,7 +12,7 @@ fs.readFile(filename, function (err, data) {
     }
 
 });
-
+*/
 
 /*
 //删除文件
@@ -45,3 +46,7 @@ fs.rename(filename, '3.new.txt', function () {
 /*fs.rmdir('./111', function (err, data) {
     console.log(err)
 })*/
+
+console.log(fs.realpathSync('.'));//获取当前文件或文件夹的绝对路径
+
+// console.log(process.cwd())

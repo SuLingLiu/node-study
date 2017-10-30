@@ -1,0 +1,47 @@
+var fs = require('fs');
+
+fs.readFileSync：读取文件
+fs.realpathSync(路径)： 获取当前文件或文件夹的绝对路径
+fs.exists(路径)： 判断当前文件或文件夹是否存在，存在返回true,否则返回false
+fs.readdirSync(路径)：返回当前路径下的所有文件的文件名数组
+f.isFile(路径)：判断当前路径是不是文件夹，是返回true，否则返回false
+==================================================================================================
+
+child_process：进程与子进程，运行命令
+var exec = require('child_process').exec
+
+===================================================================================================
+
+process : 他是一个全局对象,以下是常用
+process.argv：属性返回一个数组，这个数组包含了启动Node.js进程时的命令行参数
+process.env：属性返回一个包含用户环境信息的对象，以下在window下是不区分大小写
+	process.env.foo = 'bar';设置环境变量
+	delete process.env.foo;删除环境变量
+process.cwd()：方法返回 Node.js 进程当前工作的目录
+process.stdin、process.stdout：标准输入输出流（IO）
+--------------------------------------------------------------------
+	process.stdin.resume();//默认情况下，输入流是关闭的，要监听处理输入流数据，首先要开启输入流
+	var a;
+	var b;
+	process.stdout.write('请输入a的值：');
+	
+	//用于监听用户的输入数据，光标等待用户输入，输入完会调用回调函数
+	process.stdin.on('data', function (chunk) {
+
+	    if (!a) {
+	        a = Number(chunk);
+	        process.stdout.write('请输入b的值：');
+	    } else {
+	        b = Number(chunk);
+
+	        process.stdout.write('结果是：' + (a + b));
+	    }
+
+	});
+--------------------------------------------------------------------
+===================================================================================================
+var path = require('path');
+path.extname(文件路径)：path.extname() 方法返回 path 的扩展名，即从 path 的最后一部分中的最后一个 .（句号）字符到字符串结束。 如果 path 的最后一部分没有 . 或 path 的文件名（见 path.basename()）的第一个字符是 .，则返回一个空字符串。
+path.normalize() ：方法会规范化给定的 path，并解析 '..' 和 '.' 片段,末尾的多个分隔符会被保留。如果 path 是一个长度为零的字符串，则返回 '.'，表示当前工作目录
+path.basename： 方法返回一个 path 的最后一部分path.basename('/foo/bar/baz/asdf/quux.html');结果为quux.html
+===================================================================================================

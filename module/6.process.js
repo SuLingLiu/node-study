@@ -5,9 +5,10 @@
 //console.log( process );
 //console.log( global.process );
 
-//console.log( process.argv );
+// console.log( process.argv );
 
 //console.log( process.env );
+//console.log( process.cwd() );
 
 /*console.log(process.pid); //可以在任务管理器的详细信息里看进程
 console.log(process.title, 111); //当前进程显示的名词
@@ -43,7 +44,7 @@ process.stdin.on('data', function (chunk) {
 */
 
 //命令行交互
-process.stdin.resume();
+/*process.stdin.resume();
 var a;
 var b;
 process.stdout.write('请输入a的值：');
@@ -59,4 +60,15 @@ process.stdin.on('data', function (chunk) {
         process.stdout.write('结果是：' + (a + b));
     }
 
-});
+});*/
+
+  // var list = ['LOCALAPPDATA', 'HOME', 'APPDATA'];
+  var list = ['', '', ''];
+    var temp;
+    for (var i = 0, len = list.length; i < len; i++) {
+        // console.log(process.env[list[i]])
+       // if (temp = process.env[list[i]]) {//console.log(temp)
+        if (temp = list[i]) {console.log(temp)
+            break;
+        }
+    }
